@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %} <!--Crispy Formu dahil ettik-->
+
+{% block body %}
+
+<div class="container">
+    <h1 class="display-3">Kayıt Ekleyin</h1>
+    <div class="row">
+        <div style="margin: 30px; padding: 20px;"class="col-6 col-sm-3">
+            <h3 class="">Kayıt Girişi</h3>
+            <form method="post">
+                {% csrf_token %}
+
+                {{form|crispy}} <!--Formumuzu ekledik-->
+                <hr>
+                <button type="submit" class="btn btn-outline-danger btn-md">Oluştur</button>
+            </form>
+            
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

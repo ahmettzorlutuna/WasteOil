@@ -1,0 +1,55 @@
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: #fff;
+    margin-right: 20px;
+  }
+  .navbar-custom{
+    background-color:lightseagreen;
+  }
+</style>
+
+<nav class="navbar navbar-custom navbar-expand-md navbar-dark">
+    <div class="container-md">
+      <a class="navbar-brand" href="/">HAY Atık Yağ</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/about">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/oils/addoil">Kayıt Ekle</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/oils/dashboard">Yağlar</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <span class="hello-msg">Hello, {{request.user}}</span>
+        </li>
+        <li class="nav-item">
+          <span><a href="{% url 'user:logout2' %}">Çıkış Yap</a></span>
+        </li>
+      </ul>
+      
+      
+    </div>
+    
+
+  </nav>
+
+
+  <!--  Search Form
+      <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+  -->

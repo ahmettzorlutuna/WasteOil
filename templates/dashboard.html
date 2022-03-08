@@ -1,0 +1,47 @@
+{% extends 'layout.html' %}
+
+{% block body %} 
+<div class="container">
+    <h1 class="display-3">Kayıt Giriş</h1>
+    <a style="margin-top:10px;" href="/oils/addoil" class="btn btn-danger">Kayıt Ekle</a>
+    {% if oils %} <!-- Herhangi bir yağ girişi gönderilmişse -->
+    <table style="margin-top: 60px;"class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Litre</th>
+          <th scope="col">Ekleyen</th>
+          <th scope="col">Alınan</th>
+          <th scope="col">Fiyat</th>
+          <th scope="col">Tarih</th>
+          <th scope="col">Güncelle</th>
+          <th scope="col">Sil</th>
+        </tr>
+      </thead>
+      <tbody>
+           {% for oil in oils %}
+           <tr>
+              <th scope="row">{{oil.id}}</th>
+              <td>{{oil.liter}}</td>
+              <td>{{oil.user}}</td>
+              <td>{{oil.comp}}</td>
+              <td>{{oil.price}}</td>
+              <td>{{oil.date}}</td>
+              <td><a href="/oils/update/{{oil.id}}" class="btn btn-success">Güncelle</a></td>
+              <td><a href="/oils/delete/{{oil.id}}" class="btn btn-danger">Sil</a></td>
+            </tr>
+           {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <div style="margin-top: 20px;"class="alert alert-danger">
+      Henüz bir yağ girişi yok.
+    </div>
+    {% endif %}
+    
+</div>
+
+
+
+
+{% endblock body %} 
